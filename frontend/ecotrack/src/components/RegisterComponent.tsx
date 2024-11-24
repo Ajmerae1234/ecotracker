@@ -6,6 +6,7 @@ import {
     Grid,
     InputAdornment,
     TextField,
+    Button
 
 
 } from '@mui/material'
@@ -205,6 +206,15 @@ const RegisterComponent = () => {
                             />
                         </Grid>
                     </Grid>
+                    <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            size="large"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Register
+          </Button>
 
                 </Box>
             </Paper>
