@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     Container,
     Paper,
@@ -22,7 +23,56 @@ import {
     Phone
 } from '@mui/icons-material';
 
+
+
 const RegisterComponent = () => {
+    const [email, setEmail] = React.useState('');
+    const [password, setPassword] = React.useState('');
+    const [firstName, setFirstName] = React.useState('');
+    const [lastName, setLastName] = React.useState('');
+    const [mobile, setMobile] = React.useState('');
+    const [homeCity, setHomeCity] = React.useState('');
+    const [address, setaddress] = React.useState('');
+    const [appliances, setAppliances] = React.useState('');
+    const [totalEnergy, setTotalEnergy] = React.useState('');
+    const [energyBill, setEnergyBill] = React.useState('');
+
+    const handleEmailChange = (event: any) => {
+        setEmail(event.target.value)
+    }
+    const handlePassword = (event: any) => {
+        setPassword(event.target.value)
+    }
+
+    const handleFirstName = (event: any) => {
+        setFirstName(event.target.value)
+    }
+    const handleLastName = (event: any) => {
+        setLastName(event.target.value)
+    }
+
+    const handleMobile = (event: any) => {
+        setMobile(event.target.value)
+    }
+    const handleHomeCity = (event: any) => {
+        setHomeCity(event.target.value)
+    }
+    const handleaddress = (event: any) => {
+        setaddress(event.target.value)
+    }
+    const handleAppliances = (event: any) => {
+        setAppliances(event.target.value)
+    }
+    const handleTotalEnergy = (event: any) => {
+        setTotalEnergy(event.target.value)
+    }
+    const handleEnergyBill = (event: any) => {
+        setEnergyBill(event.target.value)
+    }
+
+    const handleRegister = () => {
+console.log(email, password, firstName, lastName, mobile, homeCity, address, appliances, appliances, totalEnergy)
+    }
     return (
         <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
             <Paper elevation={3} sx={{ p: 4, mt: 8 }}>
@@ -34,11 +84,12 @@ const RegisterComponent = () => {
                         <Grid item xs={12}>
                             <TextField
                                 fullWidth
+                                onChange={(event) => handleEmailChange(event)}
                                 required
                                 name="email"
                                 label="Email"
                                 type="email"
-                                value={''}
+                                value={email}
 
                                 InputProps={{
                                     startAdornment: (
@@ -54,10 +105,11 @@ const RegisterComponent = () => {
                             <TextField
                                 fullWidth
                                 required
+                                onChange={(event) => handlePassword(event)}
                                 name="password"
                                 label="Password"
                                 type="password"
-                                value={""}
+                                value={password}
 
                                 InputProps={{
                                     startAdornment: (
@@ -74,7 +126,8 @@ const RegisterComponent = () => {
                                 required
                                 name="firstName"
                                 label="First Name"
-                                value={""}
+                                value={firstName}
+                                onChange={handleFirstName}
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
@@ -90,7 +143,8 @@ const RegisterComponent = () => {
                                 required
                                 name="lastName"
                                 label="Last Name"
-                                value={''}
+                                value={lastName}
+                                onChange={handleLastName}
 
                                 InputProps={{
                                     startAdornment: (
@@ -102,29 +156,31 @@ const RegisterComponent = () => {
                             />
                         </Grid>
                         <Grid item xs={12}>
-              <TextField
-                fullWidth
-                required
-                name="mobileNumber"
-                label="Mobile Number"
-                type="tel"
-                value={""}
-                InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <Phone />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-            </Grid>
+                            <TextField
+                                fullWidth
+                                required
+                                name="mobileNumber"
+                                label="Mobile Number"
+                                type="tel"
+                                value={mobile}
+                                onChange={(event) => handleMobile(event)}
+                                InputProps={{
+                                    startAdornment: (
+                                        <InputAdornment position="start">
+                                            <Phone />
+                                        </InputAdornment>
+                                    ),
+                                }}
+                            />
+                        </Grid>
                         <Grid item xs={12}>
                             <TextField
                                 fullWidth
                                 required
                                 name="homeCity"
                                 label="Home City"
-                                value={""}
+                                value={homeCity}
+                                onChange={(event) => handleHomeCity(event)}
                                 InputProps={{
                                     startAdornment: (
                                         <InputAdornment position="start">
@@ -142,7 +198,9 @@ const RegisterComponent = () => {
                                 label="Address"
                                 multiline
                                 rows={2}
-                                value={""}
+                                value={address}
+                                onChange={(event) => handleaddress(event)}
+
 
                                 InputProps={{
                                     startAdornment: (
@@ -158,7 +216,8 @@ const RegisterComponent = () => {
                                 required
                                 name="totalEnergy"
                                 label="Total Energy (kW)"
-                                value={""}
+                                value={totalEnergy}
+                                onChange={(event) => handleTotalEnergy(event)}
 
                                 InputProps={{
                                     startAdornment: (
@@ -175,7 +234,9 @@ const RegisterComponent = () => {
                                 name="energyBill"
                                 label="Energy Bill"
                                 type="number"
-                                value={''}
+                                value={energyBill}
+                                onChange={(event) => handleEnergyBill(event)}
+
 
                                 InputProps={{
                                     startAdornment: (
@@ -194,7 +255,9 @@ const RegisterComponent = () => {
                                 label="List of Appliances Used"
                                 multiline
                                 rows={3}
-                                value={""}
+                                value={appliances}
+                                onChange={(event) => handleAppliances(event)}
+
 
                                 InputProps={{
                                     startAdornment: (
@@ -207,14 +270,15 @@ const RegisterComponent = () => {
                         </Grid>
                     </Grid>
                     <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            size="large"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            Register
-          </Button>
+                        type="button"
+                        fullWidth
+onClick={handleRegister}
+                        variant="contained"
+                        size="large"
+                        sx={{ mt: 3, mb: 2 }}
+                    >
+                        Register
+                    </Button>
 
                 </Box>
             </Paper>
