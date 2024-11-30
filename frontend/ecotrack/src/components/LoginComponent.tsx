@@ -25,6 +25,9 @@ const LoginComponent = () => {
     }
 
     const handleSubmit = () => {
+if (email === "admin@123" && password === 'admin') {
+navigate('/dashboard')
+}
         console.log("submit", email, password)
     }
 

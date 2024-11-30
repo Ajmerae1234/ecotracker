@@ -71,7 +71,7 @@ const RegisterComponent = () => {
     }
 
     const handleRegister = () => {
-console.log(email, password, firstName, lastName, mobile, homeCity, address, appliances, appliances, totalEnergy)
+        console.log(email, password, firstName, lastName, mobile, homeCity, address, appliances, appliances, totalEnergy)
     }
     return (
         <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
@@ -272,7 +272,7 @@ console.log(email, password, firstName, lastName, mobile, homeCity, address, app
                     <Button
                         type="button"
                         fullWidth
-onClick={handleRegister}
+                        onClick={handleRegister}
                         variant="contained"
                         size="large"
                         sx={{ mt: 3, mb: 2 }}
