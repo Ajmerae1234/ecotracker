@@ -65,7 +65,7 @@ return (
            
             <ListItem
               component={"button"}
-              
+             
               onClick={() => handleMenuItemClick('devices')}
              
              
@@ -94,9 +94,7 @@ return (
           </Typography>
         )}
         {selectedMenu === 'devices' && (
-          <Typography paragraph>
-            Devices Content
-          </Typography>
+          <Device />
         )}
 </Box>
 </Box>
