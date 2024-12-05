@@ -10,8 +10,43 @@ import {
 } from '@mui/material';
 
 const Device = () => {
-    return (
+    
+    const [name, setName] = React.useState('');
+    const [type, setType] = React.useState('');
+    const [energyConsumption, setEnergyConsumption] = React.useState('');
+    const [powerRating, setPowerRating] = React.useState('');
+    const [dailyConsumption, setDailyConsumption] = React.useState('');
+    const [monthlyConsumption, setMonthlyConsumption] = React.useState('');
 
+    
+    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setName(event.target.value);
+    };
+
+    const handleTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setType(event.target.value);
+    };
+
+    const handleEnergyConsumptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setEnergyConsumption(event.target.value);
+    };
+
+    const handlePowerRatingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setPowerRating(event.target.value);
+    };
+
+    const handleDailyConsumptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setDailyConsumption(event.target.value);
+    };
+
+    const handleMonthlyConsumptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setMonthlyConsumption(event.target.value);
+    };
+
+   
+    
+
+    return (
         <Container maxWidth="lg">
             <Grid
                 container
@@ -22,7 +57,6 @@ const Device = () => {
             >
                 <Grid item xs={12} md={10}>
                     <Paper elevation={3} sx={{ p: 3, mb: 3 }}>
-
                         <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom>
                             Add New Device
                         </Typography>
@@ -35,47 +69,50 @@ const Device = () => {
                         }}>
                             <TextField
                                 name="name"
+                                onChange={handleNameChange}
                                 label="Device Name"
-                                value={""}
+                                value={name}
                                 variant="outlined"
                             />
                             <TextField
                                 name="type"
+                                onChange={handleTypeChange}
                                 label="Device Type"
-                                value={""}
+                                value={type}
                                 variant="outlined"
                             />
                             <TextField
                                 name="energyConsumption"
+                                onChange={handleEnergyConsumptionChange}
                                 label="Energy Consumption"
                                 type="number"
-                                value=""
+                                value={energyConsumption}
                                 variant="outlined"
                             />
                             <TextField
                                 name="powerRating"
+                                onChange={handlePowerRatingChange}
                                 label="Power Rating"
                                 type="number"
-                                value=""
+                                value={powerRating}
                                 variant="outlined"
                             />
                             <TextField
                                 name="dailyConsumption"
+                                onChange={handleDailyConsumptionChange}
                                 label="Daily Consumption"
                                 type="number"
-                                value=""
                                 variant="outlined"
                             />
                             <TextField
                                 name="monthlyConsumption"
+                                onChange={handleMonthlyConsumptionChange}
                                 label="Monthly Consumption"
                                 type="number"
-                                value=""
                                 variant="outlined"
                             />
                             <Button
                                 variant="contained"
-
                                 sx={{ alignSelf: 'center' }}
                             >
                                 Add Device
@@ -84,10 +121,8 @@ const Device = () => {
                     </Paper>
                 </Grid>
             </Grid>
-
-
-        </Container>)
-
+        </Container>
+    );
 }
 
-export default Device
+export default Device;
