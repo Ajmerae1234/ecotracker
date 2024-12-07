@@ -8,6 +8,7 @@ import {
     TextField,
     Button
 } from '@mui/material';
+import DevicesList from './DevicesList'
 
 const Device = () => {
     
@@ -43,8 +44,14 @@ const Device = () => {
         setMonthlyConsumption(event.target.value);
     };
 
-   
-    
+    const handleAddDeviceClick = () => {
+        console.log('Name:', name);
+        console.log('Type:', type);
+        console.log('Energy Consumption:', energyConsumption);
+        console.log('Power Rating:', powerRating);
+        console.log('Daily Consumption:', dailyConsumption);
+        console.log('Monthly Consumption:', monthlyConsumption)
+    }
 
     return (
         <Container maxWidth="lg">
@@ -114,6 +121,7 @@ const Device = () => {
                             <Button
                                 variant="contained"
                                 sx={{ alignSelf: 'center' }}
+                                onClick={handleAddDeviceClick}
                             >
                                 Add Device
                             </Button>
@@ -121,6 +129,7 @@ const Device = () => {
                     </Paper>
                 </Grid>
             </Grid>
+            <DevicesList />
         </Container>
     );
 }
